@@ -15,21 +15,21 @@ export class RegistroComponent implements OnInit {
 passReq(){
     return this.miFormulario.controls['confirmPassword']?.errors?.['required'] &&
            this.miFormulario.controls['confirmPassword']?.touched && 
-           this.miFormulario.controls['contraseña']?.touched;
+           this.miFormulario.controls['password']?.touched;
   }
 
 emailReq(){
-  return this.miFormulario.controls['email']?.errors?.['required'] &&
-         this.miFormulario.controls['email']?.touched;
+  return this.miFormulario.controls['correo']?.errors?.['required'] &&
+         this.miFormulario.controls['correo']?.touched;
 }
 
 emailPattern(){
-  return this.miFormulario.controls['email']?.errors?.['pattern'] &&
-         this.miFormulario.controls['email']?.touched;
+  return this.miFormulario.controls['correo']?.errors?.['pattern'] &&
+         this.miFormulario.controls['correo']?.touched;
 }
 
   matchPass(ctrl: FormControl){
-    const pass = ctrl.get('contraseña')?.value;
+    const pass = ctrl.get('password')?.value;
     const confirmPass = ctrl.get('confirmPassword')?.value;
     if(pass != confirmPass){
       ctrl.get('confirmPassword')?.setErrors({cpass: true});
@@ -38,8 +38,9 @@ emailPattern(){
 
   miFormulario: FormGroup = this.fb.group({
     correo: ['',[Validators.required]],
-    usuario: ['',[Validators.required,  Validators.minLength(6)]],
-    contraseña: ['',[Validators.required, Validators.minLength(8)]],
+    idTipo: ['',[Validators.required]],
+    nombre: ['',[Validators.required,  Validators.minLength(6)]],
+    password: ['',[Validators.required, Validators.minLength(8)]],
     confirmPassword: ['',[Validators.required]]},{
     validators: this.matchPass
   });
@@ -50,9 +51,10 @@ emailPattern(){
 
     this.miFormulario.setValue({
       correo: '',
-      usuario: '',
-      contraseña: '',
-      confirmPassword: ''
+      nombre: '',
+      password: '',
+      confirmPassword: '',
+      idTipo: '1'
     });
   }
 
@@ -66,7 +68,7 @@ emailPattern(){
     console.log(this.miFormulario.value);
     this.AS.registro(this.miFormulario.value).subscribe((data: any) => {
       console.log(data);
-      if(data.status == 'User Saved'){
+      if(data.status == 'Usuario registrado'){
         this.router.navigate(['/login']);
       }
     });

@@ -40,22 +40,22 @@
 
                 <div class="col-lg-3 col-6 text-center">
                     <p>Puntos disponibles</p>
-                    <span>390</span>
+                    <span>{{puntos.puntosDisponibles}}</span>
                 </div>
 
                 <div class="col-lg-3 col-6 text-center">
-                    <p>Colillas</p>
-                    <span>15000</span>
+                    <p>Puntos usados</p>
+                    <span>{{puntos.puntosUsados}}</span>
                 </div>
 
                 <div class="col-lg-3 col-6 text-center">
-                    <p>Puntos acumulados</p>
-                    <span>500</span>
+                    <p>Puntos acumulados en total</p>
+                    <span>{{puntos.puntosTotales}}</span>
                 </div>
 
                 <div class="col-lg-3 col-6 text-center">
                     <p>Recompensas</p>
-                    <span>2</span>
+                    <span>{{count.recompensa}}</span>
                 </div>
 
             </div>
@@ -71,42 +71,17 @@
 
             <div class="section-title">
                 <h2>Recompensas</h2>
-                <p>Recompensas populares</p>
             </div>
 
             <div class="row" data-aos="zoom-in" data-aos-delay="100">
 
-                <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                <div class="col-lg-3 col-md-6 d-flex align-items-center" *ngFor="let rec of recompensas">
                     <div class="course-item">
-                        <img src="assets/main/img/course-1.jpg" class="img-fluid" alt="...">
+                        <img src="{{rec.img}}" class="img-fluid" alt="..." style="max-width: 30vh; max-height: 20vh;">
                         <div class="course-content">
                             <div class="d-flex justify-content-between align-items-center mb-3">
-                                <h4>Web Development</h4>
-                                <p class="price">$169</p>
-                            </div>
-                        </div>
-                    </div>
-                </div> <!-- End Course Item-->
-
-                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
-                    <div class="course-item">
-                        <img src="assets/main/img/course-2.jpg" class="img-fluid" alt="...">
-                        <div class="course-content">
-                            <div class="d-flex justify-content-between align-items-center mb-3">
-                                <h4>Marketing</h4>
-                                <p class="price">$250</p>
-                            </div>
-                        </div>
-                    </div>
-                </div> <!-- End Course Item-->
-
-                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
-                    <div class="course-item">
-                        <img src="assets/main/img/course-3.jpg" class="img-fluid" alt="...">
-                        <div class="course-content">
-                            <div class="d-flex justify-content-between align-items-center mb-3">
-                                <h4>Content</h4>
-                                <p class="price">$180</p>
+                                <h4>{{rec.recompensa}}</h4>
+                                <p class="price">{{rec.precio}} puntos</p>
                             </div>
                         </div>
                     </div>

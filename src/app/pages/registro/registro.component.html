@@ -26,9 +26,9 @@
         <form autocomplete="off" [formGroup]="miFormulario">
             <div class="mb-3 row justify-content-md-center"  align="center">
                 <div class="col-12">
-                    <label  class="form-label fw-bold">Usuario:</label>
-                    <input type="text" class="form-control" formControlName="usuario" placeholder="Ingrese su nombre de usuario">
-                    <span *ngIf="campoValido('usuario')" class="form-text text-danger">
+                    <label  class="form-label fw-bold">Nombre completo:</label>
+                    <input type="text" class="form-control" formControlName="nombre" placeholder="Ingrese su nombre completo">
+                    <span *ngIf="campoValido('nombre')" class="form-text text-danger">
                       Campo obligatorio</span> 
                     <!-- <span class="form-text text-danger">Mínimo 4 letras</span>  -->
                 </div> 
@@ -48,8 +48,8 @@
             <div class="mb-3 row justify-content-md-center"  align="center">
                 <div class="col-12">
                     <label  class="form-label fw-bold">Contraseña:</label>
-                    <input type="password" class="form-control" formControlName="contraseña" placeholder="Ingrese su contraseña">
-                     <span class="form-text text-danger" *ngIf="campoValido('contraseña')">Mínimo 8 caracteres</span>
+                    <input type="password" class="form-control" formControlName="password" placeholder="Ingrese su contraseña">
+                     <span class="form-text text-danger" *ngIf="campoValido('password')">Mínimo 8 caracteres</span>
                 </div> 
             </div>
             <div class="mb-3 row justify-content-md-center"  align="center">
