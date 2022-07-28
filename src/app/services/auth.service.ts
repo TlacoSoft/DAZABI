@@ -12,8 +12,9 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
   // URL = 'https://apidazabi.azurewebsites.net/users';
-  URL = 'http://localhost:3000';
+  // URL = 'http://localhost:3000';
   //URL = 'http://dazabi.azurewebsites.net';
+  URL = 'https://dazabi-nodejs.azurewebsites.net';
   login(login: Login): Observable<Request> {
     return this.http.post<Request>(
       `${this.URL}/users/login`, login

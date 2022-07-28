@@ -94,7 +94,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .colorbutton1{
     padding: 8px 20px;
-    margin-left: 30px;
+    /* margin-left: 30px; */
     border-radius: 50px;
     color: #fff;
     font-size: 14px;
@@ -110,7 +110,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .colorbutton2{
   padding: 8px 20px;
-  margin-left: 30px;
+  /* margin-left: 30px; */
   border-radius: 50px;
   color: #fff;
   font-size: 14px;
