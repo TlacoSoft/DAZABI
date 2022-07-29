@@ -51,6 +51,11 @@ export class MainComponent implements OnInit {
     });
   }
 
+  ver(id: any){
+    console.log(id);
+    this.router.navigate(['/recompensa',id]);
+  }
+
   salir(){
     this.CS.deleteAll();
     this.router.navigate(['/login']);

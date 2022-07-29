@@ -43,6 +43,11 @@ export class AuthService {
     );
   }
 
+  recompensas(id:any): Observable<Request>{
+    return this.http.get<Request>(`${this.URL}/recompensas/${id}`
+    );
+  }
+
   recompensasID(id:any): Observable<Request>{
     return this.http.get<Request>(`${this.URL}/recompensas/get/${id}`
     );
@@ -56,6 +61,10 @@ export class AuthService {
   recompensasCountID(id:any): Observable<Request>{
     return this.http.get<Request>(`${this.URL}/recompensas/count/${id}`
     );
+  }
+
+  encriptar(idRecompensa: any, idUser: any): Observable<Request>{
+    return this.http.get<Request>(`https://dgs801.com/encriptar.php?idRecompensa=${idRecompensa}&idUser=${idUser}`);
   }
 
 

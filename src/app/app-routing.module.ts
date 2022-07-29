@@ -4,6 +4,7 @@ import { AyudaComponent } from './client/ayuda/ayuda.component';
 import { HistorialComponent } from './client/historial/historial.component';
 import { MainComponent } from './client/main/main.component';
 import { PerfilComponent } from './client/perfil/perfil.component';
+import { RecompensaComponent } from './client/recompensa/recompensa.component';
 import { CookiesGuard } from './guards/cookies.guard';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -24,6 +25,10 @@ const routes: Routes = [
   },{
     path: 'perfil',
     component: PerfilComponent,
+    canActivate: [CookiesGuard]
+  },{
+    path: 'recompensa/:id',
+    component: RecompensaComponent,
     canActivate: [CookiesGuard]
   },{
     path: 'ayuda',

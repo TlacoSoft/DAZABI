@@ -14,6 +14,8 @@ import { CookieService } from 'ngx-cookie-service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { RecompensaComponent } from './client/recompensa/recompensa.component';
+import { NgxQRCodeModule } from '@techiediaries/ngx-qrcode';
 
 @NgModule({
   declarations: [
@@ -24,14 +26,16 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     MainComponent,
     AyudaComponent,
     PerfilComponent,
-    HistorialComponent
+    HistorialComponent,
+    RecompensaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgxQRCodeModule
   ],
   providers: [CookieService, {provide: LocationStrategy, useClass: HashLocationStrategy}
   ],
